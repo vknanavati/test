@@ -3,27 +3,22 @@ import {Home} from './components/Home';
 import {Contact} from './components/Contact';
 import {Counter} from './components/Counter';
 import {ToDoList} from './components/ToDoList';
+import {AppBar, Toolbar, Box} from '@mui/material';
 
 
 function App() {
   return (
     <>
-      <nav>
-        <ul>
-          <li>
+      <AppBar position="static">
+        <Toolbar>
+          <Box sx={{display: "flex", gap:2}}>
             <Link to="/">Home</Link>
-          </li>
-          <li>
             <Link to="/counter">Counter</Link>
-          </li>
-          <li>
             <Link to="/todo">ToDoList</Link>
-          </li>
-          <li>
             <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
+          </Box>
+        </Toolbar>
+      </AppBar>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/counter" element={<Counter/>}/>
