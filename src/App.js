@@ -1,27 +1,33 @@
 import {Link, Routes, Route} from 'react-router-dom';
 import {Home} from './components/Home';
-import {ToDoList} from './components/ToDoList';
-import {Counter} from './components/Counter';
 import {Contact} from './components/Contact';
-import {AppBar, Toolbar, Box} from '@mui/material';
+import {Counter} from './components/Counter';
+import {ToDoList} from './components/ToDoList';
+
 
 function App() {
   return (
     <>
-      <AppBar position="static">
-        <Toolbar>
-          <Box sx={{display: "flex", gap:2}}>
+      <nav>
+        <ul>
+          <li>
             <Link to="/">Home</Link>
-            <Link to="/todo">To Do List</Link>
+          </li>
+          <li>
             <Link to="/counter">Counter</Link>
+          </li>
+          <li>
+            <Link to="/todo">ToDoList</Link>
+          </li>
+          <li>
             <Link to="/contact">Contact</Link>
-          </Box>
-        </Toolbar>
-      </AppBar>
+          </li>
+        </ul>
+      </nav>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/todo" element={<ToDoList/>}/>
         <Route path="/counter" element={<Counter/>}/>
+        <Route path="/todo" element={<ToDoList/>}/>
         <Route path="/contact" element={<Contact/>}/>
       </Routes>
     </>
@@ -29,3 +35,4 @@ function App() {
 }
 
 export default App;
+
